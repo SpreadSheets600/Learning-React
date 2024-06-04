@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 export default function Navbar(props) {
   return (
@@ -7,7 +7,7 @@ export default function Navbar(props) {
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
-            Astrum
+            SheetsBlog
           </a>
           <button
             className="navbar-toggler"
@@ -35,6 +35,7 @@ export default function Navbar(props) {
               <li className="nav-item">
                 <a className="nav-link" href="/">
                   {props.special}
+                  <span className="badge text-bg-secondary mx-2">New</span>
                 </a>
               </li>
             </ul>
@@ -56,5 +57,5 @@ export default function Navbar(props) {
   );
 }
 
-Navbar.propTypes = {special: PropTypes.string}
-Navbar.defaultProps = {special: "Hidden"}
+Navbar.propTypes = { special: PropTypes.string };
+Navbar.defaultProps = { special: "Hidden" };
