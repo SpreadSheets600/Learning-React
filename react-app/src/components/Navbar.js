@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export default function Navbar(props) {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             SheetsBlog
@@ -37,8 +37,12 @@ export default function Navbar(props) {
                   {props.special}
                   <span className="badge text-bg-secondary mx-2">New</span>
                 </a>
-              </li>
+              </li> 
             </ul>
+            <div className="form-check form-switch">
+              <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
+              <label className="form-check-label" for="flexSwitchCheckDefault">SwitchMode</label>
+            </div>
             <form className="d-flex" role="search">
               <input
                 className="form-control me-2"
@@ -46,7 +50,7 @@ export default function Navbar(props) {
                 placeholder="Search"
                 aria-label="Search"
               />
-              <button className="btn btn-outline-success" type="submit">
+              <button className="btn btn-outline-primary" type="submit">
                 Search
               </button>
             </form>
@@ -58,4 +62,4 @@ export default function Navbar(props) {
 }
 
 Navbar.propTypes = { special: PropTypes.string };
-Navbar.defaultProps = { special: "Hidden" };
+
